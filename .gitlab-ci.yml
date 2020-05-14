@@ -1,0 +1,22 @@
+Test:
+  image: node:9.2.0
+  stage: test
+  before_script:
+    - cd frontend
+    - npm install
+    - npm install -g jest
+  script:
+    - jest --coverage
+    
+
+# unittests:
+#   image: maven:3-jdk-7
+#   stage: test
+#   script:
+#     - mvn clean install
+#     - mvn verify
+#   artifacts:
+#     reports:
+#       junit:
+#           - target/surefire-reports/TEST-*.xml
+#           - target/failsafe-reports/TEST-*.xml
